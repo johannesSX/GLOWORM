@@ -32,7 +32,7 @@ build_dataset.py        SurfaceDataModule: cohort loading + train/val/test split
 pl.py                   Training loop
 validation.py           baseline / detection / classification
 visualize_results.py    glass-brain figures
-run_gloworm.py         command-line entry point
+run_gloworm.py          command-line entry point
 requirements.txt
 ```
 
@@ -44,7 +44,7 @@ Model **checkpoints from the paper are distributed separately** — each comes w
 
 This repo expects **already-preprocessed** surface features. The pipeline that turns a raw T1 MRI into the per-subject `*.morpho.npz` files (FastSurfer reconstruction → resampling to `fsaverage` → morphometric feature stacking) lives in its own repository:
 
-> **Preprocessing:** `https://github.com/<your-org>/gloworm-preprocessing` *(replace with the real URL)*
+> **Preprocessing:** `https://github.com/johannesSX/SurfPrep`
 
 Run that pipeline first for every subject, then arrange the outputs as below.
 
@@ -120,7 +120,7 @@ PyTorch / PyTorch-Geometric wheels are hardware-specific — install the build t
 
 ## 6. Using the paper checkpoints
 
-Pretrained checkpoints from the paper are provided separately (see the release / download link). For each model **three** files travel together and must all be placed before you can evaluate:
+Pretrained checkpoints from the paper are accessible through [(soon be available)](). For each model **three** files travel together and must all be placed before you can evaluate:
 
 | Provided file | Put it at | Why |
 |---|---|---|
@@ -233,10 +233,10 @@ Reads the `detection_results.json` produced in 7.3.
 
 ```bash
 python run_gloworm.py --mode visualize_results --vis_result_mode glassbrain \
-    --train_dataset ixi --eval_dataset fcdbonn --split val \
+    --train_dataset ixi --eval_dataset fcdbonn --split test \
+    --ext_data_dir data/FCDBONN \
     --subjects_dir_ext data/fastsurfer_subjects \
-    --val_output_dir results/fcdbonn \
-    --vis_subject "fcdbonn__sub-00055 fcdbonn__sub-00064"
+    --val_output_dir results/fcdbonn
 ```
 
 One PNG per subject under `results/fcdbonn/viz_results/glassbrain/`: the GT mask region (blue outline), the top clusters (green = TP, magenta = FP) over the projected anomaly z-map. Omit `--vis_subject` to render every subject in the detection results.
