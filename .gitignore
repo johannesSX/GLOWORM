@@ -21,6 +21,7 @@ runs/
 *.nii
 *.nii.gz
 *.mgz
+additional_data/
 
 # Notebooks / editors / OS
 .ipynb_checkpoints/

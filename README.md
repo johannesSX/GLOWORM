@@ -120,7 +120,7 @@ PyTorch / PyTorch-Geometric wheels are hardware-specific — install the build t
 
 ## 6. Using the paper checkpoints
 
-Pretrained checkpoints from the paper are accessible through [(soon be available)](). For each model **three** files travel together and must all be placed before you can evaluate:
+Pretrained checkpoints from the paper are accessible through [zenodo](https://zenodo.org/records/20931289). For each model **three** files travel together and must all be placed before you can evaluate:
 
 | Provided file | Put it at | Why |
 |---|---|---|
