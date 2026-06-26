@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Data, checkpoints, results (distributed separately — never commit)
+data/
+checkpoints_cyclevae/
+results/
+validation_results_cyclevae/
+runs/
+*.pt
+*.pth
+*.npz
+*.nii
+*.nii.gz
+*.mgz
+
+# Notebooks / editors / OS
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+
+# test-cli
+test_cli.txt

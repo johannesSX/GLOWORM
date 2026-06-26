@@ -1,0 +1,26 @@
+# Core deep-learning stack.
+# NOTE: install torch + torch-geometric (and torch-scatter) from the wheels
+# matching your CUDA / CPU build first — see https://pytorch.org and
+# https://pytorch-geometric.readthedocs.io . The pins below are the libraries
+# the code imports; exact versions depend on your hardware.
+
+torch>=2.1
+torch-geometric>=2.4
+torch-scatter>=2.1
+
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+pandas>=2.0
+tqdm>=4.65
+
+# Neuroimaging I/O + coordinate transforms
+nibabel>=5.1
+
+# Visualization (glass-brain figures + interactive HTML overlays)
+matplotlib>=3.7
+nilearn>=0.10
+plotly>=5.15
+
+# Training logs
+tensorboard>=2.13
